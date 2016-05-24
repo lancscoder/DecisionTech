@@ -41,10 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Basket.cs" />
+    <Compile Include="BasketCalculator.cs" />
     <Compile Include="BasketProduct.cs" />
+    <Compile Include="Discounts\DiscountApplier.cs" />
     <Compile Include="Discounts\BreadDiscount.cs" />
     <Compile Include="Discounts\IDiscount.cs" />
     <Compile Include="Discounts\MilkDiscount.cs" />
+    <Compile Include="IBasketCalculator.cs" />
+    <Compile Include="Discounts\IDiscountApplier.cs" />
     <Compile Include="Products\Bread.cs" />
     <Compile Include="Products\Butter.cs" />
     <Compile Include="IBasket.cs" />

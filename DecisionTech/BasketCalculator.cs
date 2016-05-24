@@ -6,19 +6,21 @@ namespace DecisionTech
 {
     public class BasketCalculator : IBasketCalculator
     {
+        private readonly IDiscountApplier _discountApplier;
+
+        public BasketCalculator()
+            : this(new DiscountApplier())
+        {
+        }
+
+        public BasketCalculator(IDiscountApplier discountApplier)
+        {
+            _discountApplier = discountApplier;
+        }
+
         public decimal CalculateTotal(List<BasketProduct> basketProducts)
         {
-            var breadDiscount = new BreadDiscount();
-            while (breadDiscount.CanApplyDiscount(basketProducts))
-            {
-                breadDiscount.ApplyDiscount(basketProducts);
-            }
-
-            var milkDiscount = new MilkDiscount();
-            while (milkDiscount.CanApplyDiscount(basketProducts))
-            {
-                milkDiscount.ApplyDiscount(basketProducts);
-            }
+            _discountApplier.ApplyDiscounts(basketProducts);
 
             return basketProducts.Sum(b => b.BasketPrice);
         }
