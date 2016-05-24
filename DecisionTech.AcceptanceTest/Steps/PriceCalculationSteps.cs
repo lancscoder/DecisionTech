@@ -1,6 +1,4 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using DecisionTech.Products;
+﻿using DecisionTech.Products;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 

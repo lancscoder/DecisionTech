@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using DecisionTech.Products;
 
@@ -7,18 +8,23 @@ namespace DecisionTech
 {
     public class Basket : IBasket
     {
-        private readonly List<Tuple<IProduct, int>> _basketContents = new List<Tuple<IProduct, int>>();
-
         public decimal Total { get; private set; }
+        public List<BasketProduct> Contents { get; } = new List<BasketProduct>();
 
         public void AddProduct(IProduct product, int quantity)
         {
-            _basketContents.Add(new Tuple<IProduct, int>(product, quantity));
+            for (var i = 0; i < quantity; i++)
+            {
+                Contents.Add(new BasketProduct(product));
+            }
         }
 
         public void CalculateTotal()
         {
-            Total = _basketContents.Sum(b => b.Item1.Price * b.Item2);
+            var breadDiscount = new BreadDiscount();
+            breadDiscount.ApplyDiscount(Contents);
+
+            Total = Contents.Sum(b => b.BasketPrice);
         }
     }
 }
