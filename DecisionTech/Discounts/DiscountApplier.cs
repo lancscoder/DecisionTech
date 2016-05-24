@@ -1,4 +1,3 @@
-using System.CodeDom;
 using System.Collections.Generic;
 
 namespace DecisionTech.Discounts
@@ -8,7 +7,7 @@ namespace DecisionTech.Discounts
         private  readonly List<IDiscount> _discounts;
 
         public DiscountApplier()
-            :this(new List<IDiscount>() { new BreadDiscount(), new MilkDiscount()})
+            :this(new List<IDiscount> { new BreadDiscount(), new MilkDiscount()})
         {
         }
 
