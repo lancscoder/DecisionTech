@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecisionTech.AcceptanceTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecisionTech", "DecisionTech\DecisionTech.csproj", "{D76BD043-D547-49DB-B326-D47BC30ED732}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DecisionTech.Tests", "DecisionTech.Tests\DecisionTech.Tests.csproj", "{8CA817AD-8958-469C-A54D-6BF1DD224063}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D76BD043-D547-49DB-B326-D47BC30ED732}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D76BD043-D547-49DB-B326-D47BC30ED732}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D76BD043-D547-49DB-B326-D47BC30ED732}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CA817AD-8958-469C-A54D-6BF1DD224063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CA817AD-8958-469C-A54D-6BF1DD224063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CA817AD-8958-469C-A54D-6BF1DD224063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CA817AD-8958-469C-A54D-6BF1DD224063}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

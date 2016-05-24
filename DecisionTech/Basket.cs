@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using DecisionTech.Discounts;
 using DecisionTech.Products;
 
 namespace DecisionTech
@@ -22,10 +23,16 @@ namespace DecisionTech
         public void CalculateTotal()
         {
             var breadDiscount = new BreadDiscount();
-            breadDiscount.ApplyDiscount(Contents);
+            while (breadDiscount.CanApplyDiscount(Contents))
+            {
+                breadDiscount.ApplyDiscount(Contents);
+            }
 
             var milkDiscount = new MilkDiscount();
-            milkDiscount.ApplyDiscount(Contents);
+            while (milkDiscount.CanApplyDiscount(Contents))
+            {
+                milkDiscount.ApplyDiscount(Contents);
+            }
 
             Total = Contents.Sum(b => b.BasketPrice);
         }
