@@ -24,6 +24,9 @@ namespace DecisionTech
             var breadDiscount = new BreadDiscount();
             breadDiscount.ApplyDiscount(Contents);
 
+            var milkDiscount = new MilkDiscount();
+            milkDiscount.ApplyDiscount(Contents);
+
             Total = Contents.Sum(b => b.BasketPrice);
         }
     }
