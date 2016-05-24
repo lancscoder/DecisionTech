@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Runtime.InteropServices;
+using DecisionTech.Products;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TechTalk.SpecFlow;
 
 namespace DecisionTech.AcceptanceTest.Steps
@@ -6,34 +9,41 @@ namespace DecisionTech.AcceptanceTest.Steps
     [Binding]
     public class PriceCalculationSteps
     {
+        private IBasket _basket;
+
+        public PriceCalculationSteps()
+        {
+            _basket = new Basket();
+        }
+
         [Given(@"the basket has (.*) bread")]
-        public void GivenTheBasketHasBread(int p0)
+        public void GivenTheBasketHasBread(int quantity)
         {
-            ScenarioContext.Current.Pending();
+            _basket.AddProduct(new Bread(), quantity);
         }
-        
+
         [Given(@"the basket has (.*) butter")]
-        public void GivenTheBasketHasButter(int p0)
+        public void GivenTheBasketHasButter(int quantity)
         {
-            ScenarioContext.Current.Pending();
+            _basket.AddProduct(new Butter(), quantity);
         }
-        
+
         [Given(@"the basket has (.*) milk")]
-        public void GivenTheBasketHasMilk(int p0)
+        public void GivenTheBasketHasMilk(int quantity)
         {
-            ScenarioContext.Current.Pending();
+            _basket.AddProduct(new Milk(), quantity);
         }
-        
+
         [When(@"I total the basket")]
         public void WhenITotalTheBasket()
         {
-            ScenarioContext.Current.Pending();
+            _basket.CalculateTotal();
         }
-        
+
         [Then(@"the total should be £(.*)")]
-        public void ThenTheTotalShouldBe(Decimal p0)
+        public void ThenTheTotalShouldBe(decimal total)
         {
-            ScenarioContext.Current.Pending();
+            Assert.AreEqual(total, _basket.Total);
         }
     }
 }
