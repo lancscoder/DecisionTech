@@ -4,6 +4,6 @@ namespace DecisionTech
 {
     public interface IBasketCalculator
     {
-        decimal CalculateTotal(List<BasketProduct> basketProducts);
+        decimal CalculateTotal(List<BasketItem> basketItems);
     }
 }

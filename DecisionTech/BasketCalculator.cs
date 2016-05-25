@@ -1,28 +1,28 @@
 using System.Collections.Generic;
 using System.Linq;
-using DecisionTech.Discounts;
+using DecisionTech.Offers;
 
 namespace DecisionTech
 {
     public class BasketCalculator : IBasketCalculator
     {
-        private readonly IDiscountApplier _discountApplier;
+        private readonly IOfferApplier _offerApplier;
 
         public BasketCalculator()
-            : this(new DiscountApplier())
+            : this(new OfferApplier())
         {
         }
 
-        public BasketCalculator(IDiscountApplier discountApplier)
+        public BasketCalculator(IOfferApplier offerApplier)
         {
-            _discountApplier = discountApplier;
+            _offerApplier = offerApplier;
         }
 
-        public decimal CalculateTotal(List<BasketProduct> basketProducts)
+        public decimal CalculateTotal(List<BasketItem> basketItems)
         {
-            _discountApplier.ApplyDiscounts(basketProducts);
+            _offerApplier.ApplyOffers(basketItems);
 
-            return basketProducts.Sum(b => b.BasketPrice);
+            return basketItems.Sum(b => b.Price);
         }
     }
 }

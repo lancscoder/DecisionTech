@@ -7,7 +7,7 @@ namespace DecisionTech
     {
         private readonly IBasketCalculator _basketCalculator;
         public decimal Total { get; private set; }
-        public List<BasketProduct> Contents { get; } = new List<BasketProduct>();
+        public List<BasketItem> Items { get; } = new List<BasketItem>();
 
         public Basket()
             : this(new BasketCalculator())
@@ -23,13 +23,13 @@ namespace DecisionTech
         {
             for (var i = 0; i < quantity; i++)
             {
-                Contents.Add(new BasketProduct(product));
+                Items.Add(new BasketItem(product));
             }
         }
 
         public void CalculateTotal()
         {
-            Total = _basketCalculator.CalculateTotal(Contents);
+            Total = _basketCalculator.CalculateTotal(Items);
         }
     }
 }

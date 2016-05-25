@@ -6,7 +6,7 @@ namespace DecisionTech
     public interface IBasket
     {
         decimal Total { get; }
-        List<BasketProduct> Contents { get; } 
+        List<BasketItem> Items { get; } 
         void AddProduct(IProduct product, int quantity);
         void CalculateTotal();
     }

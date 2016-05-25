@@ -52,8 +52,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Discounts\BreadDiscountTests.cs" />
-    <Compile Include="Discounts\MilkDiscountTests.cs" />
+    <Compile Include="Offers\BreadOfferTests.cs" />
+    <Compile Include="Offers\MilkOfferTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

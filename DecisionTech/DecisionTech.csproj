@@ -42,13 +42,13 @@
   <ItemGroup>
     <Compile Include="Basket.cs" />
     <Compile Include="BasketCalculator.cs" />
-    <Compile Include="BasketProduct.cs" />
-    <Compile Include="Discounts\DiscountApplier.cs" />
-    <Compile Include="Discounts\BreadDiscount.cs" />
-    <Compile Include="Discounts\IDiscount.cs" />
-    <Compile Include="Discounts\MilkDiscount.cs" />
+    <Compile Include="BasketItem.cs" />
+    <Compile Include="Offers\OfferApplier.cs" />
+    <Compile Include="Offers\BreadOffer.cs" />
+    <Compile Include="Offers\IOffer.cs" />
+    <Compile Include="Offers\MilkOffer.cs" />
     <Compile Include="IBasketCalculator.cs" />
-    <Compile Include="Discounts\IDiscountApplier.cs" />
+    <Compile Include="Offers\IOfferApplier.cs" />
     <Compile Include="Products\Bread.cs" />
     <Compile Include="Products\Butter.cs" />
     <Compile Include="IBasket.cs" />
